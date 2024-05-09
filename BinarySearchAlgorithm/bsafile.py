@@ -1,25 +1,27 @@
 def main():
-    list = [1,2,4,5,6,7,8,9]
-    value = 4
+    mylist = []
+    for i in range(1, 5001):
+        mylist.append(i)    
+    value = 800
     low = 0
-    high = (len(list) - 1)
-    bsa(list, value, low, high) 
+    high = (len(mylist) - 1)
+    bsa(mylist, value, low, high) 
 
-def bsa(list, value, low, high):
-    list.sort()
+def bsa(mylist, value, low, high):
+    mylist.sort()
     mid = low + (high - low)//2
-    if not list:
-        print("Empty list")
+    if not mylist:
+        print("Empty mylist")
     elif low == high:
         print("Value Not ehh found")
-    elif list[mid] == value:
-        print("value found", list[mid], "Index", mid)
-    elif list[mid] < value:
+    elif mylist[mid] == value:
+        print("value found", mylist[mid], "Index", mid)
+    elif mylist[mid] < value:
         low = mid + 1
-        bsa(list, value, low, high)
-    elif list[mid] > value:
+        bsa(mylist, value, low, high)
+    elif mylist[mid] > value:
         high = mid + 1
-        bsa(list, value, low, high)
+        bsa(mylist, value, low, high)
     else:
         print("Value not found")
 
