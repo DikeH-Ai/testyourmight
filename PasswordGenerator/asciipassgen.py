@@ -14,7 +14,7 @@ import random
 def asciipassgen():
     # create a password variable to an empty string
     password = ""  
-    # setup a for loop withing the range of random 6, 12
+    # setup a for loop withing the range of random 7, 17
     num = random.choice(range(7,17))
     lowerval = 0
     upperval = 0
@@ -26,7 +26,7 @@ def asciipassgen():
         asciiVal = random.choice(range(20,126))
         if asciiVal == 32:
             continue
-    #     in each instance convert digit to its character equivalent
+
         if len(password) > 4:
             for i in password:
                 if i.islower():
@@ -41,9 +41,8 @@ def asciipassgen():
                 continue
             if spcVal < 2:
                 continue
-#     and append to the empty string
+    # append to the empty string
         password += chr(asciiVal)
-#     return password variable
     print(password)
 
 if __name__ == "__main__":
